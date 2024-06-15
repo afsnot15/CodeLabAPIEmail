@@ -1,9 +1,6 @@
-# CodeLabAPITemplate
+# CodeLabAPIEmail
 
-Este é um template para criação de uma API do CodeLab. Utilize este template para criar sua API NestJSS dentro
-de um Docker container.
-
-Antes de iniciar o projeto a partir do template, verifique os TODO's e substitua pelos valores corretos
+API de Email CodeLab
 
 ## Development Start
 
