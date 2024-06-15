@@ -10,6 +10,8 @@ services:
       - "7002:7002"
     volumes:
       - .:/home/node/app
+    networks:
+     - codelab-net   
 
   db-email:
     container_name: db-email
@@ -25,3 +27,10 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - "5435:5002"
+    networks:
+     - codelab-net    
+
+networks:
+  codelab-net:
+    name: codelab-net
+    external: true
