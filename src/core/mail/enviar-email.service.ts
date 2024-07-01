@@ -9,14 +9,18 @@ export class EnviarEmailService {
   constructor(private mailerService: MailerService) {}
 
   async enviarWithTemplate(enviarEmailDto: EnviarEmailDto): Promise<void> {
-    this.logger.log(
-      `enviar email: ${enviarEmailDto.to} com o template ${enviarEmailDto.template}`,
-    );
+    try {
+      this.logger.log(
+        `enviar email: ${enviarEmailDto.to} com o template ${enviarEmailDto.template}`,
+      );
 
-    await this.mailerService.sendMail(enviarEmailDto);
+      await this.mailerService.sendMail(enviarEmailDto);
 
-    this.logger.log(
-      `enviar email [OK]: ${enviarEmailDto.to} com o template ${enviarEmailDto.template}`,
-    );
+      this.logger.log(
+        `enviar email [OK]: ${enviarEmailDto.to} com o template ${enviarEmailDto.template}`,
+      );
+    } catch (error) {
+      this.logger.error(`enviar-email [ERROR]: ${error.message}`);
+    }
   }
 }
